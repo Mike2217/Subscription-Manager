@@ -18,9 +18,6 @@ The Subscription Manager is a web-app that allows you to track your current expe
 
 
 # Dependencies
-- django
 - flask
 - psycopg2-binary
 - djangorestframework
-- react
-- 
