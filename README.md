@@ -6,7 +6,21 @@ The Subscription Manager is a web-app that allows you to track your current expe
 
 
 # Overview
-![P4-FIGMA](https://user-images.githubusercontent.com/92862291/150845842-7c10f505-0ab1-4cd6-8ff4-42ae9710f246.jpg)
+![image](https://user-images.githubusercontent.com/92862291/150977939-f9ecfc35-20de-4780-a6f5-e1d6fb427bf9.png)
+
+
+# Component Hierarchy
+![image](https://user-images.githubusercontent.com/92862291/150977611-0a3f4517-daf3-45d9-a1ef-6883cf6285ec.png)
+
 
 # Relationship Diagram
-<img width="660" alt="Relationship Diagram" src="https://user-images.githubusercontent.com/92862291/150849923-2df70031-ba5a-463b-800b-7bf83bf116f3.png">
+![Database ER diagram (crow's foot) - Database ER diagram (crow's foot) (1)](https://user-images.githubusercontent.com/92862291/150977493-e0ab3e0b-765f-418d-87d9-ba5fb03a5411.jpeg)
+
+
+# Dependencies
+- django
+- flask
+- psycopg2-binary
+- djangorestframework
+- react
+- 
