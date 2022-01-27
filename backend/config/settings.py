@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
   'localhost',
-  'subscription-manager-p4.herokuapp.com',
+  'https://subscription-manager-p4.herokuapp.com/',
 ]
 
 
