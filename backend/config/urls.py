@@ -16,14 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from submgr import views
+from submgr.views import UserViewSet, SubscriptionsViewSet
 
 router = routers.DefaultRouter()
-
-router.register('User', views.UsersViewSet)
-router.register('Subscriptions', views.SubscriptionsViewSet)
+router.register('User', UserViewSet)
+router.register('Subscriptions', SubscriptionsViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(router.urls))
+  path('', include(router.urls))
 ]
+
+
+
+
+
+# router = routers.DefaultRouter()
+
+# router.register('User', UserViewSet)
+# router.register('Subscriptions', SubscriptionsViewSet)
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include(router.urls))
+# ]
