@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-f_mp-@o)ez56c#n#r)n=)+ak&)w%kbqas9a&2gym&%16z%%9yz
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  'localhost'
-  'https://subscription-manager-p4.herokuapp.com/',
+  'localhost',
+  'subscription-manager-p4.herokuapp.com',
 ]
 
 
