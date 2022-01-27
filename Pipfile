@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 gunicorn = "*"
 whitenoise = "*"
 pipdeptree = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
