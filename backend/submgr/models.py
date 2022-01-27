@@ -5,6 +5,8 @@ from django.db import models
 class User(models.Model):
   name = models.CharField(max_length=256)
   password = models.CharField(max_length=256)
+  # subscriptions = models.ForeignKey(Subscriptions, on_delete=models.CASCADE, related_name='subscriptions')
+
 # change password to not have special characters
 
   def __str__(self):
