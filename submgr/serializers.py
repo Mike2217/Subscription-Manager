@@ -17,7 +17,7 @@ from .models import User, Subscriptions
 #         fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user']
 
 
-class UserSerialzer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
     fields = ['name', 'password']
