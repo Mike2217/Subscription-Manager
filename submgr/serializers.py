@@ -24,7 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class SubscriptionsSerializer(serializers.ModelSerializer):
-    user = serializers.HyperlinkedRelatedField(view_name='user-detail', read_only=True)
+    user = serializers.StringRelatedField(view_name='user-detail', many=True)
     class Meta:
       model = Subscriptions
       fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user']
