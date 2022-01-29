@@ -23,7 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
     fields = ['name', 'password']
 
 
-class SubscriptionSerializer(serializers.ModelSerializer):
+class SubscriptionsSerializer(serializers.ModelSerializer):
     user = serializers.HyperlinkedRelatedField(view_name='user-detail', read_only=True)
     class Meta:
       model = Subscriptions
