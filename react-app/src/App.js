@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from 'react-app/src/Components/Layout/Layout.jsx'
+import Home from 'react-app/src/Screens/Home'
+import Login from 'react-app/src/Screens/Login'
+import ManageSub from 'react-app/src/Screens/ManageSub'
+import AddSub from 'react-app/src/Screens/AddSub'
+import SignUp from 'react-app/src/Screens/SignUp'
+import './App.css'
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Layout>
+        <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/Subscriptions' element={<ManageSub />} />
+        <Route path='/Add-Subscription' element={<AddSub />} />
+          <Route path='/Sign-Up' element={<SignUp />} />
+        </Routes>
+      </Layout>
     </div>
-  );
+  )
 }
 
 export default App;
