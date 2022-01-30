@@ -16,9 +16,7 @@ export default function ManageSub() {
         </div>
         <div id='current-subs'>
           Current Subscriptions
-          <table>
-            
-          </table>
+          
         </div>
       </div>
     </>
