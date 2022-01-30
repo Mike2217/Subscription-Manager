@@ -1,15 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class User(models.Model):
-  name = models.CharField(max_length=256)
-  password = models.CharField(max_length=256)
+# class User(models.Model):
+#   # name = models.CharField(max_length=256)
+#   # password = models.CharField(max_length=256)
 
-# change password to not have special characters
+# # change password to not have special characters
 
-  def __str__(self):
-      return self.name
+#   def __str__(self):
+#       return self.name
 
 
 class Subscriptions(models.Model):
