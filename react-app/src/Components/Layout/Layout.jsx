@@ -1,13 +1,14 @@
 import './Layout.css'
-import Footer from 'react-app/src/Components/Footer/Footer.jsx'
-import Header from 'react-app/src/Components/Header/Header.jsx'
+import Footer  from '../Footer/Footer'
+import Header from '../Header/Header'
 
-const Layout = () => (
+
+const Layout = (props) => (
     <div className='layout'>
     <Header />
-        {/* <div className="layout-children">
+        <div className="layout-children">
             {props.children}
-        </div> */}
+        </div>
     <Footer />
     </div>
 )

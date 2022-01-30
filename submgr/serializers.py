@@ -18,10 +18,10 @@ from .models import User, Subscriptions
 
 
 class UserSerializer(serializers.ModelSerializer):
-  user = serializers.StringRelatedField(many=True)
+  subscriptions = serializers.StringRelatedField(many=True)
   class Meta:
     model = User
-    fields = ['name', 'password', 'user']
+    fields = ['name', 'password', 'subscriptions']
 
 
 class SubscriptionsSerializer(serializers.ModelSerializer):

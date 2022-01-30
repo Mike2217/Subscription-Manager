@@ -1,10 +1,13 @@
-import Layout from 'react-app/src/Components/Layout/Layout.jsx'
-import Home from 'react-app/src/Screens/Home'
-import Login from 'react-app/src/Screens/Login'
-import ManageSub from 'react-app/src/Screens/ManageSub'
-import AddSub from 'react-app/src/Screens/AddSub'
-import SignUp from 'react-app/src/Screens/SignUp'
+import Layout from './Components/Layout/Layout.jsx'
+import Home from './Screens/Home/Home.jsx'
+import Login from './Screens/Login/Login.jsx'
+import ManageSub from './Screens/ManageSub/ManageSub.jsx'
+import AddSub from './Screens/AddSub/AddSub.jsx'
+import SignUp from './Screens/SignUp/SignUp.jsx'
 import './App.css'
+import { Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
 
@@ -18,7 +21,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/Subscriptions' element={<ManageSub />} />
         <Route path='/Add-Subscription' element={<AddSub />} />
-          <Route path='/Sign-Up' element={<SignUp />} />
+        <Route path='/Sign-Up' element={<SignUp />} />
         </Routes>
       </Layout>
     </div>

@@ -1,3 +1,13 @@
 #header-background{
   background-image: url('https://www.dreamincode.net/forums/uploads/monthly_04_2014/post-638814-139809061379.png');
+  height: 15vh;
+  display: flex;
+  justify-content: center;
 }
+
+#header-title{
+  font-size: 8vh;
+  color: #FFECD1;
+  margin-top: 3vh;
+}
+

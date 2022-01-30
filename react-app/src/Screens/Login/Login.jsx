@@ -1,77 +1,49 @@
-import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { getUser } from "../../Services/utilities";
+import './Login.css'
 
-  const navigate = useNavigate
+export default function SignUp() {
+
+const navigate = useNavigate
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
 
-
-  export const signIn = async (credentials) => {
-    try {
-      const res = await api.post('/sign-in', credentials)
-      localStorage.setItem('token', res.data.token)
-      const user = jwtDecode(res.data.token)
-      return user 
-    } catch (error) {
-      throw error
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const login = {
+      username,
+      password
     }
+    await getUser(login)
+  navigate('/Subscriptions')
   }
 
-
-  const [form, setForm] = useState({
-    username: '',
-    password: '',
-    isError: false,
-    errorMsg: '',
-  })
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-  })
-  }
-
-  const onSignIn = async (e) => {
-    e.preventDefault()
-    const { setUser } = props
-    if (checkSpCharacters(form.username)) {
-      setForm({
-        isError: true,
-        errorMsg: 'Username contains unapproved special characters',
-        username: '',
-        password: '',
-      })
-    } else if (checkSpCharacters(form.password)) {
-      setForm({
-        isError: true,
-        errorMsg: 'Password contains unapproved special characters',
-        username: '',
-        password: '',
-      })
-    } else {
-      try {
-        const user = await signIn(form)
-        setUser(user)
-        navigate('/Subscriptions')
-      } catch (error) {
-        console.log(error)
-        setForm({
-          isError: true,
-          errorMsg: 'invalid credentials',
-          password: '',
-        })
-      }
-    }
-  }
 
   return (
-    <div id='Login-Form-Container'>
-      <form id='Login-Form' onSubmit={onSignIn}>
-      <p className='sign-in-form-text'>Username</p>
-      <input name='username' type="text" value={form.username} onChange={handleChange} />
-      <p className='sign-in-form-text'>Password</p>
-      <input name='password' type="password"  value={form.password} onChange={handleChange} />
+    <div id='signup-main-container'>
+      <form id='sign-up-form'>
+        <input
+          className='form-fields input-fields'
+          id = 'Username-Field'
+          type='text'
+          value='username'
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="USERNAME"
+        />
+        <input
+          className='form-fields input-fields'
+          id = 'Password-Field'
+          type='text'
+          value='password'
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="PASSWORD"
+        />
+        <div className='form-fields' id='create-account-button' onClick={handleSubmit}>LOGIN</div>
       </form>
     </div>
   )

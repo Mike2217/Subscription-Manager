@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom"
-import logo from '../../screens/resources/logo.png'
 import './Header.css'
 
 const Header = () => (
     <div id='header-background'>
-      <div>
+      <div id='header-title'>
         Subscription Manager
       </div>
   </div>

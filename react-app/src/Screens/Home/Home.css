@@ -1,0 +1,49 @@
+#home-container {
+  display: flex;
+  border: red solid 3px;
+  justify-content: center;
+  flex-flow: row-wrap;
+  height: 60vh;
+}
+
+#message-container {
+  flex-flow: row-wrap;
+  width: 100%;
+  border: solid blue 5px;
+}
+
+#welcome-message {
+  display: flex;
+  justify-content: center;
+  border: solid green 3px;
+  width: 100%;
+  font-size: 6vh;
+}
+
+#content-description {
+  display: flex;
+  border: solid purple 4px;
+  justify-content: center;
+  margin-top: 5vh;
+  font-size: 3vh;
+  width: 100%;
+}
+
+#link-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: solid lightpink 4px;
+}
+
+#home-login{
+border: solid lightgreen 3px;
+font-size: 5vh;
+color: #023E7D;
+}
+
+#home-sign-up{
+border: solid lightblue 4px;
+font-size: 5vh;
+color: #023E7D;
+}
