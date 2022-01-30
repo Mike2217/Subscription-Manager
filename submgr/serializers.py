@@ -23,6 +23,9 @@ class UserSerializer(serializers.ModelSerializer):
     model = User
     fields = ['username', 'id', 'password', 'subscriptions']
 
+    def create(self, validated_data):
+        return User.objects.create_superuser(**validated_data)
+
 
 class SubscriptionsSerializer(serializers.ModelSerializer):
     class Meta:
