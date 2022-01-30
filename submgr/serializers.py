@@ -27,4 +27,4 @@ class UserSerializer(serializers.ModelSerializer):
 class SubscriptionsSerializer(serializers.ModelSerializer):
     class Meta:
       model = Subscriptions
-      fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user']
+      fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
