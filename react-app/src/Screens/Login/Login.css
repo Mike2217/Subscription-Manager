@@ -1,3 +1,4 @@
+
 #signup-main-container{
   height: 60vh;
   border: solid lightcoral 4px;
@@ -17,6 +18,11 @@ width: 50%;
   font-size: 3vh;
   border: blue solid 3px;
   color: #FFECD1
+}
+
+.input-fields::placeholder{
+opacity: 1;
+color: #FFECD1;
 }
 
 .form-fields{
