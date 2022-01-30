@@ -1,3 +1,6 @@
+import axios from 'axios'
+
+
 const getToken = () => {
   return new Promise(resolve => {
       resolve(`Bearer ${localStorage.getItem('token') || null}`)
@@ -5,10 +8,7 @@ const getToken = () => {
 }
 
 const api = axios.create({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? "https://HEROKU_URL/api"
-      : "http://localhost:8000",
+  baseURL: 'https://subscription-manager-p4.herokuapp.com'
 });
 
 api.interceptors.request.use(async function (config) {
