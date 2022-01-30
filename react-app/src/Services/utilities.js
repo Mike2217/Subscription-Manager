@@ -22,6 +22,17 @@ export const getUser = async (id) => {
   }
 };
 
+export const getUsers = async () => {
+  try {
+    const res = await axios.get(
+      `https://subscription-manager-p4.herokuapp.com/User/`
+    );
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const newSubscription = async (body) => {
   try {
     const res = await axios.post(
