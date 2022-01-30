@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import React from "react";
 import { getUsers } from "../../Services/utilities";
 import "./Login.css";
-import ManageSub from 'react-app/src/Screens/ManageSub/ManageSub.jsx'
+import ManageSub from '../ManageSub/ManageSub.jsx'
 
 export default function SignUp() {
   // const navigate = useNavigate
