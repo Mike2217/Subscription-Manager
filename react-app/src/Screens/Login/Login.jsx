@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import React from "react";
 import { getUsers } from "../../Services/utilities";
 import "./Login.css";
+import ManageSub from 'react-app/src/Screens/ManageSub/ManageSub.jsx'
 
 export default function SignUp() {
   // const navigate = useNavigate
@@ -10,13 +11,15 @@ export default function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [captureUser, setCaptureUser] = useState([]);
+  const [captureUserID, setCaptureUserID] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const login = {
-      username,
-      password,
-    };
+    captureUser.forEach((user) => {
+      if (user.username == username && user.password == password) {
+        setCaptureUserID(user.id)
+      }
+    })
   }
     // await getUser(login)
     //GET LOGIN WORKING (Display users in console) Grab ID from OBJECT and then id form the object will be displayed on the bottom
@@ -28,7 +31,10 @@ export default function SignUp() {
           };
           grabUsers();
         }, []);
-console.log(captureUser)
+  console.log(captureUser)
+  
+    
+
   return (
     <div id="signup-main-container">
       <form id="sign-up-form">
@@ -56,9 +62,10 @@ console.log(captureUser)
           LOGIN
         </button>
       </form>
+      <ManageSub captureUserID={captureUserID} />
       {password && username ? (
         <div>
-          <Link to={`/Subscriptions/${captureUser.id}`}> </Link>
+          <Link to={`/Subscriptions/`}> </Link>
         </div>
       ) : null}
     </div>

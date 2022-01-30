@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-export const getSubscriptions = async (id) => {
+export const getSubscription = async (id) => {
   try {
     const res = await axios.get(
-      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}`
+      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}/`
     );
     return res.data;
   } catch (error) {
@@ -14,7 +14,7 @@ export const getSubscriptions = async (id) => {
 export const getUser = async (id) => {
   try {
     const res = await axios.get(
-      `https://subscription-manager-p4.herokuapp.com/User/${id}`
+      `https://subscription-manager-p4.herokuapp.com/User/${id}/`
     );
     return res.data;
   } catch (error) {
@@ -22,6 +22,16 @@ export const getUser = async (id) => {
   }
 };
 
+export const getSubscriptions = async () => {
+  try {
+    const res = await axios.get(
+      `https://subscription-manager-p4.herokuapp.com/Subscriptions/`
+    );
+    return res.data;
+  } catch (error) {
+    throw error;
+  }
+};
 export const getUsers = async () => {
   try {
     const res = await axios.get(
@@ -60,7 +70,7 @@ export const newUser = async (body) => {
 export const editSubscription = async (id, user) => {
   try {
     const res = await axios.put(
-      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}`,
+      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}/`,
       user
     );
     return res.data;
@@ -72,7 +82,7 @@ export const editSubscription = async (id, user) => {
 export const editUser = async (id, user) => {
   try {
     const res = await axios.put(
-      `https://subscription-manager-p4.herokuapp.com/User/${id}`,
+      `https://subscription-manager-p4.herokuapp.com/User/${id}/`,
       user
     );
     return res.data;
@@ -84,7 +94,7 @@ export const editUser = async (id, user) => {
 export const deleteSubscriptions = async (id) => {
   try {
     const res = await axios.delete(
-      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}`
+      `https://subscription-manager-p4.herokuapp.com/Subscriptions/${id}/`
     );
     return res.data;
   } catch (error) {
@@ -95,7 +105,7 @@ export const deleteSubscriptions = async (id) => {
 export const deleteUser = async (id) => {
   try {
     const res = await axios.delete(
-      `https://subscription-manager-p4.herokuapp.com/User/${id}`
+      `https://subscription-manager-p4.herokuapp.com/User/${id}/`
     );
     return res.data;
   } catch (error) {
