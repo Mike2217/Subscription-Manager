@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
   'localhost',
   'subscription-manager-p4.herokuapp.com',
-  'CORS_ALLOWED_ORIGINS = [subscription-manager-p4.herokuapp.com]'
+  'CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]'
 
 ]
 
