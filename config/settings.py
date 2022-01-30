@@ -31,7 +31,6 @@ ALLOWED_HOSTS = [
   'localhost',
   'subscription-manager-p4.herokuapp.com',
   'CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]'
-
 ]
 
 
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'submgr',
-    'django-cors-headers'
+    'cors-headers'
 ]
 
 MIDDLEWARE = [

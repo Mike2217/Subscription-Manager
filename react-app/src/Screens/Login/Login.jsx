@@ -24,6 +24,7 @@ export default function SignUp() {
     }
     await getUser(login)
     //GET LOGIN WORKING (Display users in console) Grab ID from OBJECT and then id form the object will be displayed on the bottom
+    
     console.log(login)
   // navigate('/Subscriptions')
   }
