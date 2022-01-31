@@ -15,7 +15,7 @@ export default function ManageSub({ username }) {
   // const [subPrice, setSubPrice] = useState([])
   // const [subWebsite, setSubWebsite] = useState([])
 
-  let subMatch = []
+  // let subMatch = []
   // let subNames = []
   // let subPrices = []
   // let subDates = []
@@ -25,29 +25,28 @@ export default function ManageSub({ username }) {
     const grabSubscriptions = async () => {
       const res = await getSubscriptions();
       const filterSubs = res.filter((sub) => {
-        return 
+        return sub.user === username
       })
-      console.log(userID)
       // console.log(res);
-      setSubList(res);
+      setSubList(filterSubs);
     };
     grabSubscriptions();
   }, []);
 console.log(subList)
   
   
-  subList.forEach((sub) => {
-    if (sub.user == userID) {
-      subMatch.push(sub)
+  // subList.forEach((sub) => {
+  //   if (sub.user == userID) {
+  //     subMatch.push(sub)
       // console.log(subMatch)
       // sub.SubName.push(subNames)
       // sub.MonthlyCost.push(subPrices)
       // sub.SubDate.push(subDates)
       // sub.Website.push(subWebsite)
-    }
-  })
+  //   }
+  // })
   
-  for (let i = 0; i <= subMatch; i++){
+  for (let i = 0; i <= subList.length; i++){
     return (
       <div id='table-container'>
         <table id='sub-table'>
@@ -60,12 +59,12 @@ console.log(subList)
             </tr>
           </thead>
           <tbody>
-        {subMatch.map((e, key) => (
+        {subList?.map((e, key) => (
             <tr key={key}>
-            <td>{e.fields.SubName}</td>
-            <td>{e.fields.SubDate}</td>
-            <td>{e.fields.MonthlyCost}</td>
-            <td>{e.fields.Website}</td>
+            <td>{e.SubName}</td>
+            <td>{e.SubDate}</td>
+            <td>{e.MonthlyCost}</td>
+            <td>{e.Website}</td>
             </tr>
           ))}
         </tbody>
