@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div id='link-container'>
         <div id='home-login' onClick={navigate('/Login')}>Login</div>
-        <div id='home-sign-up' onClick={navigate('/Sign-Up')}>Sign Up</div>
+        {/* <div id='home-sign-up' onClick={navigate('/Sign-Up')}>Sign Up</div> */}
       </div>
       </div>
       </div>

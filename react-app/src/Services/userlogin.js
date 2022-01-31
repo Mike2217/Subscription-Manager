@@ -6,7 +6,7 @@ export const logIn = async (credentials) => {
     localStorage.setItem("token", res.data.access);
     localStorage.setItem("refresh", res.data.refresh);
     console.log(res);
-    return res;
+    return res.data.user;
   } catch (error) {
     throw error;
   }

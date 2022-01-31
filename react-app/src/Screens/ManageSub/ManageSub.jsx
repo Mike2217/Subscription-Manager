@@ -4,26 +4,31 @@ import { useState, useEffect } from "react";
 import { getSubscriptions } from '../../Services/utilities';
 
 
-export default function ManageSub(props) {
+export default function ManageSub({ username }) {
 
   const navigate = useNavigate
-  let userID = props.captureUserID
   const [subList, setSubList] = useState([])
+
+  console.log(username)
   // const [subNames, setSubNames] = useState([])
   // const [subDate, setSubDate] = useState([])
   // const [subPrice, setSubPrice] = useState([])
   // const [subWebsite, setSubWebsite] = useState([])
 
   let subMatch = []
-  let subNames = []
-  let subPrices = []
-  let subDates = []
-  let subWebsite = []
+  // let subNames = []
+  // let subPrices = []
+  // let subDates = []
+  // let subWebsite = []
 
   useEffect(() => {
     const grabSubscriptions = async () => {
       const res = await getSubscriptions();
-      console.log(res);
+      const filterSubs = res.filter((sub) => {
+        return 
+      })
+      console.log(userID)
+      // console.log(res);
       setSubList(res);
     };
     grabSubscriptions();
@@ -34,6 +39,7 @@ console.log(subList)
   subList.forEach((sub) => {
     if (sub.user == userID) {
       subMatch.push(sub)
+      // console.log(subMatch)
       // sub.SubName.push(subNames)
       // sub.MonthlyCost.push(subPrices)
       // sub.SubDate.push(subDates)
