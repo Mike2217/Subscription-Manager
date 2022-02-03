@@ -1,13 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react";
-import { getSubscriptions } from '../../Services/utilities';
+import { getSubscriptions, deleteSubscriptions } from '../../Services/utilities';
 
 
-export default function ManageSub({ username }) {
+export default function ManageSub({ username, setSelectedSub, selectedSub }) {
 
-  const navigate = useNavigate
+  const navigate = useNavigate()
   const [subList, setSubList] = useState([])
+
+
+  // const navigate = useNavigate()
 
   console.log(username)
   // const [subNames, setSubNames] = useState([])
@@ -20,6 +23,18 @@ export default function ManageSub({ username }) {
   // let subPrices = []
   // let subDates = []
   // let subWebsite = []
+
+  const handleEdit = (id) => {
+    const select = id
+    console.log(select)
+    setSelectedSub(select)
+    console.log(selectedSub)
+    navigate('/Edit-Sub')
+  }
+
+  const handleDelete = (id) => {
+    deleteSubscriptions(id)
+  }
 
   useEffect(() => {
     const grabSubscriptions = async () => {
@@ -34,6 +49,10 @@ export default function ManageSub({ username }) {
   }, []);
 console.log(subList)
   
+  const handleNav = (e) => {
+    e.preventDefault()
+    navigate('/Add-Subscription')
+  }
   
   // subList.forEach((sub) => {
   //   if (sub.user == userID) {
@@ -65,26 +84,33 @@ console.log(subList)
             <td>{e.SubDate}</td>
             <td>{e.MonthlyCost}</td>
             <td>{e.Website}</td>
+            <td><button onClick={() => handleEdit(e.id)}>Edit This Subscription</button></td>
+            <td><button onClick={() => handleDelete(e.id)}>Delete This Subscription</button></td>
             </tr>
           ))}
-        </tbody>
+          </tbody>
         </table>
+        <div id='Add-Subs-Link-Container'>
+        <button id='Add-Subs-Link'onClick={handleNav}>Add Subscriptions</button>
+        </div>
       </div>
     )
   }
 
 
-  return (
-    <>
-      <div id='link-container'>
-        <div id='Add-Subs-Link-Container'>
-        <div id='Add-Subs-Link'onclick={navigate('/Add-Subscription')}></div>
-          Add Subscriptions
-        </div>
-        <div id='current-subs'>
-          Current Subscriptions
-        </div>
-      </div>
-    </>
-  )
+  // return (
+  //   <>
+  //     <div id='link-container'>
+  //       <div id='Add-Subs-Link-Container'>
+  //       <button id='Add-Subs-Link'onclick={navigate('/Add-Subscription')}>Add Subscriptions</button>
+  //       </div>
+  //       <div id='current-subs'>
+  //         Current Subscriptions
+  //       </div>
+  //       <div id='add-sub-container'>
+  //       <button onClick={navigate('/Add-Sub')}> Add Subscription </button>
+  //     </div>
+  //     </div>
+  //   </>
+  // )
 }

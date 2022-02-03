@@ -9,12 +9,14 @@ import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { verifyUser } from "./Services/userlogin.js";
 import { getSubscriptions } from "./Services/utilities.js";
+import EditSubs from "./Screens/EditSubs/EditSubs.jsx"
 
 function App() {
   const [captureUser, setCaptureUser] = useState([]);
   const [captureUserID, setCaptureUserID] = useState(0);
   const [subList, setSubList] = useState([]);
   const [userInfo, setUserInfo] = useState({ username: "", password: "" });
+  const [selectedSub, setSelectedSub] = useState('')
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -54,10 +56,11 @@ function App() {
           />
           <Route
             path="/Subscriptions/"
-            element={<ManageSub captureUserID={captureUserID} username={userInfo.username} />}
+            element={<ManageSub captureUserID={captureUserID} username={userInfo.username} selectedSub={selectedSub} setSelectedSub={setSelectedSub}/>}
           />
           <Route path="/Add-Subscription" element={<AddSub />} />
           {/* <Route path='/Sign-Up' element={<SignUp />} /> */}
+          <Route path="/Edit-Sub/" element={<EditSubs selectedSub={selectedSub} />} />
         </Routes>
       </Layout>
     </div>

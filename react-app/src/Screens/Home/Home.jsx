@@ -15,7 +15,7 @@ export default function Home() {
         This web-app will allow you to track all of your current subscriptions, cost per month, and total spent. To get started, select log in, or sign up.
       </div>
       <div id='link-container'>
-        <div id='home-login' onClick={navigate('/Login')}>Login</div>
+        <button id='home-login' onClick={navigate('/Login')}>Login</button>
         {/* <div id='home-sign-up' onClick={navigate('/Sign-Up')}>Sign Up</div> */}
       </div>
       </div>

@@ -1,7 +1,7 @@
 
 #signup-main-container{
   height: 60vh;
-  border: solid lightcoral 4px;
+  /* border: solid lightcoral 4px; */
   display: flex;
   justify-content: center;
   flex-flow: row-wrap;
@@ -9,14 +9,14 @@
 
 
 #sign-up-form{
-border: solid 4px blue;
+/* border: solid 4px blue; */
 width: 50%;
 }
 
 .input-fields{
   background-color: #5E7FA0;
   font-size: 3vh;
-  border: blue solid 3px;
+  /* border: blue solid 3px; */
   color: #FFECD1
 }
 
