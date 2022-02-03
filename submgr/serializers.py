@@ -21,14 +21,14 @@ class UserSerializer(serializers.ModelSerializer):
   subscriptions = serializers.StringRelatedField(many=True)
   class Meta:
     model = User
-    fields = [ 'username', 'id', 'password', 'subscriptions', 'user']
+    fields = [ 'username', 'id', 'password', 'subscriptions']
 
     def create(self, validated_data):
         return User.objects.create_superuser(**validated_data)
 
 
 class SubscriptionsSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()
+    user = serializers.PrimaryKeyRelatedField()
     class Meta:
       model = Subscriptions
       fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
