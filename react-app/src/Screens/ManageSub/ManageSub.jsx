@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getSubscriptions, deleteSubscriptions, getUsers } from '../../Services/utilities';
 
 
-export default function ManageSub({ captureUser, setCaptureUser, userInfo, setSelectedSub, selectedSub }) {
+export default function ManageSub({ captureUser, setCaptureUserID, setCaptureUser, userInfo, setSelectedSub, selectedSub }) {
 
 
 
@@ -46,11 +46,16 @@ export default function ManageSub({ captureUser, setCaptureUser, userInfo, setSe
         return user.username === userInfo.username
       })
       setCaptureUser(filterUser)
-      console.log(filterUser[0])
+      // console.log(filterUser)
+      // console.log(filterUser[0])
       const res = await getSubscriptions();
       console.log(res)
       const filterSubs = res.filter((sub) => {
         console.log(sub)
+        console.log(filterUser[0])
+        // setCaptureUserID(sub.filterUser.id)
+        // return sub.user === filterUser.id
+        setCaptureUserID(filterUser[0].id)
         return sub.user === filterUser[0].id
       })
       console.log(filterSubs);

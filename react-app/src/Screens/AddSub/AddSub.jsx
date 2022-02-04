@@ -2,12 +2,14 @@ import React from 'react';
 import { getSubscriptions, newSubscription } from "../../Services/utilities";
 import { useState, useEffect } from "react";
 
-export default function AddSub() {
+export default function AddSub(captureUserID) {
 
   const [SubName, setSubName] = useState("");
   const [SubDate, setSubDate] = useState("");
   const [MonthlyCost, setMonthlyCost] = useState(0);
   const [Website, setWebsite] = useState("");
+  const [id, setId] = useState(0)
+  
   // const [newSub, setNewSub] = useState({
   //   MonthlyCost: '',
   //   SubName: '',
@@ -30,12 +32,13 @@ export default function AddSub() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setId(captureUserID)
     const newSubscriptionData = {
       SubName,
       SubDate,
       MonthlyCost,
       Website,
-      User: 3
+      id
     };
     await newSubscription(newSubscriptionData);
   };

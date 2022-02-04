@@ -56,9 +56,9 @@ function App() {
           />
           <Route
             path="/Subscriptions/"
-            element={<ManageSub captureUserID={captureUserID} setCaptureUser={setCaptureUser} captureUser={captureUser} userInfo={userInfo} selectedSub={selectedSub} setSelectedSub={setSelectedSub}/>}
+            element={<ManageSub captureUserID={captureUserID} setCaptureUserID={setCaptureUserID} setCaptureUser={setCaptureUser} captureUser={captureUser} userInfo={userInfo} selectedSub={selectedSub} setSelectedSub={setSelectedSub}/>}
           />
-          <Route path="/Add-Subscription" element={<AddSub />} />
+          <Route path="/Add-Subscription" element={<AddSub captureUserID={captureUserID}/>} />
           {/* <Route path='/Sign-Up' element={<SignUp />} /> */}
           <Route path="/Edit-Sub/" element={<EditSubs selectedSub={selectedSub} />} />
         </Routes>
