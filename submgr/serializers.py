@@ -27,16 +27,16 @@ class UserSerializer(serializers.ModelSerializer):
         return User.objects.create_superuser(**validated_data)
 
 
-# class SubscriptionsSerializer(serializers.ModelSerializer):
-#     user = serializers.PrimaryKeyRelatedField(many=False, queryset=User.objects.all())
-#     class Meta:
-#       model = Subscriptions
-#       fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
-
-
 class SubscriptionsSerializer(serializers.ModelSerializer):
-    user = serializers.IntegerField()
+    user = serializers.PrimaryKeyRelatedField(many=False, queryset=User.objects.all())
     class Meta:
       model = Subscriptions
-      fields = '__all__'
-      # ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
+      fields = ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
+
+
+# class SubscriptionsSerializer(serializers.ModelSerializer):
+#     user = serializers.IntegerField()
+#     class Meta:
+#       model = Subscriptions
+#       fields = '__all__'
+#       # ['SubName', 'SubDate', 'MonthlyCost', 'Website', 'user', 'id']
