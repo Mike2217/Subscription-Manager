@@ -55,9 +55,10 @@ export default function ManageSub({ captureUser, setCaptureUserID, setCaptureUse
         console.log(filterUser[0])
         // setCaptureUserID(sub.filterUser.id)
         // return sub.user === filterUser.id
-        setCaptureUserID(filterUser[0].id)
+        setCaptureUserID(parseInt(filterUser[0].id))
         return sub.user === filterUser[0].id
       })
+      setSubList(filterSubs)
       console.log(filterSubs);
     };
     grabSubscriptions();

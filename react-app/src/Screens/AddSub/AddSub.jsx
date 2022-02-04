@@ -32,13 +32,13 @@ export default function AddSub(captureUserID) {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setId(captureUserID)
+    // setId(captureUserID)
     const newSubscriptionData = {
       SubName,
       SubDate,
       MonthlyCost,
       Website,
-      id
+      user: captureUserID.captureUserID
     };
     await newSubscription(newSubscriptionData);
   };
