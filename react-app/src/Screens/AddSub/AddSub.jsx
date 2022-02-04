@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 
 export default function AddSub() {
 
-  const [newSubName, setNewSubName] = useState("");
-  const [newSubDate, setNewSubDate] = useState("");
-  const [newSubMonthlyCost, setNewSubMonthlyCost] = useState(0);
-  const [newSubWebsite, setNewSubWebsite] = useState("");
+  const [SubName, setSubName] = useState("");
+  const [SubDate, setSubDate] = useState("");
+  const [MonthlyCost, setMonthlyCost] = useState(0);
+  const [Website, setWebsite] = useState("");
   // const [newSub, setNewSub] = useState({
   //   MonthlyCost: '',
   //   SubName: '',
@@ -31,10 +31,11 @@ export default function AddSub() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newSubscriptionData = {
-      newSubName,
-      newSubDate,
-      newSubMonthlyCost,
-      newSubWebsite,
+      SubName,
+      SubDate,
+      MonthlyCost,
+      Website,
+      User: 3
     };
     await newSubscription(newSubscriptionData);
   };
@@ -47,36 +48,36 @@ export default function AddSub() {
           name="SubName"
           className="Edit-field"
           type="text"
-          value={newSubName}
+          value={SubName}
           // onChange={handleChange}
-          onChange={(e) => setNewSubName(e.target.value)}
+          onChange={(e) => setSubName(e.target.value)}
           placeholder="Subscription Name"
         />
         <input
           name="SubDate"
           className="Edit-field"
           type="text"
-          value={newSubDate}
+          value={SubDate}
           // onChange={handleChange}
-          onChange={(e) => setNewSubDate(e.target.value)}
+          onChange={(e) => setSubDate(e.target.value)}
           placeholder="Date Subscribed"
         />
         <input
           name="MonthlyCost"
           className="Edit-field"
           type="text"
-          value={newSubMonthlyCost}
+          value={MonthlyCost}
           // onChange={handleChange}
-          onChange={(e) => setNewSubMonthlyCost(e.target.value)}
+          onChange={(e) => setMonthlyCost(e.target.value)}
           placeholder="Monthly Cost"
         />
         <input
           name="Website"
           className="Edit-field"
           type="text"
-          value={newSubWebsite}
+          value={Website}
           // onChange={handleChange}
-          onChange={(e) => setNewSubWebsite(e.target.value)}
+          onChange={(e) => setWebsite(e.target.value)}
           placeholder="Website"
         />
         <button

@@ -18,7 +18,7 @@ class Subscriptions(models.Model):
     SubDate = models.DateField()
     MonthlyCost = models.FloatField()
     Website = models.CharField(max_length=256)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscriptions')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscriptions', null=True)
 
     def __str__(self):
         return self.SubName
