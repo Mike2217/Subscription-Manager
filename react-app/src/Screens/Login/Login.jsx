@@ -24,6 +24,7 @@ export default function SignIn({
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
+    // console.log(userInfo)
   };
 
   const handleSubmit = async (e) => {
@@ -43,7 +44,9 @@ export default function SignIn({
     //   }
     // });
     const userData = await logIn(userInfo);
+    console.log(userInfo)
     setCaptureUser(userData);
+    console.log(captureUser)
     // await logIn({
     //   username,
     //   password

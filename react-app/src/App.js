@@ -12,7 +12,7 @@ import { getSubscriptions } from "./Services/utilities.js";
 import EditSubs from "./Screens/EditSubs/EditSubs.jsx"
 
 function App() {
-  const [captureUser, setCaptureUser] = useState([]);
+  const [captureUser, setCaptureUser] = useState({});
   const [captureUserID, setCaptureUserID] = useState(0);
   const [subList, setSubList] = useState([]);
   const [userInfo, setUserInfo] = useState({ username: "", password: "" });
@@ -56,7 +56,7 @@ function App() {
           />
           <Route
             path="/Subscriptions/"
-            element={<ManageSub captureUserID={captureUserID} username={userInfo.username} selectedSub={selectedSub} setSelectedSub={setSelectedSub}/>}
+            element={<ManageSub captureUserID={captureUserID} setCaptureUser={setCaptureUser} captureUser={captureUser} userInfo={userInfo} selectedSub={selectedSub} setSelectedSub={setSelectedSub}/>}
           />
           <Route path="/Add-Subscription" element={<AddSub />} />
           {/* <Route path='/Sign-Up' element={<SignUp />} /> */}

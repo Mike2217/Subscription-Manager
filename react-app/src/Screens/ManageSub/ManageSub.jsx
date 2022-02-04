@@ -1,18 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react";
-import { getSubscriptions, deleteSubscriptions } from '../../Services/utilities';
+import { getSubscriptions, deleteSubscriptions, getUsers } from '../../Services/utilities';
 
 
-export default function ManageSub({ username, setSelectedSub, selectedSub }) {
+export default function ManageSub({ captureUser, setCaptureUser, userInfo, setSelectedSub, selectedSub }) {
+
+
 
   const navigate = useNavigate()
   const [subList, setSubList] = useState([])
 
-
+// console.log(captureUser)
+  console.log(userInfo)
   // const navigate = useNavigate()
 
-  console.log(username)
   // const [subNames, setSubNames] = useState([])
   // const [subDate, setSubDate] = useState([])
   // const [subPrice, setSubPrice] = useState([])
@@ -38,16 +40,23 @@ export default function ManageSub({ username, setSelectedSub, selectedSub }) {
 
   useEffect(() => {
     const grabSubscriptions = async () => {
-      const res = await getSubscriptions();
-      const filterSubs = res.filter((sub) => {
-        return sub.user === username
+      const user = await getUsers()
+      console.log(userInfo)
+      const filterUser = user.filter((user) => {
+        return user.username === userInfo.username
       })
-      // console.log(res);
-      setSubList(filterSubs);
+      setCaptureUser(filterUser)
+      console.log(filterUser[0])
+      const res = await getSubscriptions();
+      console.log(res)
+      const filterSubs = res.filter((sub) => {
+        console.log(sub)
+        return sub.user === filterUser[0].id
+      })
+      console.log(filterSubs);
     };
     grabSubscriptions();
   }, []);
-console.log(subList)
   
   const handleNav = (e) => {
     e.preventDefault()
