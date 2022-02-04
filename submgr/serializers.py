@@ -35,7 +35,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class SubscriptionsSerializer(serializers.ModelSerializer):
-    user = serializers.CharField()
+    user = serializers.IntegerField()
     class Meta:
       model = Subscriptions
       fields = '__all__'
