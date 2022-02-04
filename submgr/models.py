@@ -1,4 +1,4 @@
-from django.db import models, request
+from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -18,9 +18,7 @@ class Subscriptions(models.Model):
     SubDate = models.DateField()
     MonthlyCost = models.FloatField()
     Website = models.CharField(max_length=256)
-    user = User.objects.get(username=request.POST['username'])
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscriptions')
-    # user_id = models.ForeignKey(User.id, on_delete=models.CASCADE, related_name='subscriptions')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='subscriptions')
 
     def __str__(self):
         return self.SubName
